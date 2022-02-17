@@ -1,0 +1,10 @@
+.formGroup {
+   padding: 0.5rem 0.5rem;
+   border-radius: 4px;
+   background-color: #F1F1E6;
+   color: #01304E;
+}
+
+.formGroup .form-check-label {
+   color: #18181a;
+}

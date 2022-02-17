@@ -1,0 +1,10 @@
+.navbar,
+.navbar-default {
+   background-image: linear-gradient(#F1F1E6, #F1F1E6) !important;
+}
+
+.navbar a {
+   padding: 0 0.5em;
+   text-decoration: none;
+   color: #01304E;
+}

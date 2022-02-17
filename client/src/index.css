@@ -1,0 +1,18 @@
+body, #root, #container, .wrapper {
+   height: 100%;
+   width: 100%;
+   min-height: 100vh;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Roboto', "Open Sans", "Lato";
+   background-color: #01304e;
+   color: #F1FAFF;
+}
+
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}

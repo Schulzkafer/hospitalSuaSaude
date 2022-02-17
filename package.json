@@ -1,0 +1,26 @@
+{
+   "name": "hospitalsuasaude",
+   "version": "1.0.0",
+   "description": "Pacientes de Hospital Sua Saude",
+   "main": "app.js",
+   "scripts": {
+      "start": "cross-env NODE_ENV=production node app.js",
+      "server": "nodemon app.js",
+      "client": "npm run start --prefix client",
+      "client:install": "npm install --prefix client",
+      "client:build": "npm run build --prefix client",
+      "heroku-postbuild": "cd client && npm install && npm run build",
+      "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+   },
+   "keywords": [],
+   "author": "Aleksandr Karashev (github - Schulzkafer)",
+   "license": "ISC",
+   "dependencies": {
+      "body-parser": "^1.19.0",
+      "concurrently": "^7.0.0",
+      "config": "^3.3.6",
+      "cross-env": "^7.0.3",
+      "express": "^4.17.1",
+      "mysql2": "^2.3.3"
+   }
+}

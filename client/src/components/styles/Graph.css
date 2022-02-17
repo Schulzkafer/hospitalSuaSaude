@@ -1,0 +1,18 @@
+svg {
+   color: #3C4856;
+   background-color: #F1F1E6
+}
+
+.axis path, .axis line {
+   fill: none;
+   stroke: #01304E;
+}
+
+.axis text {
+   font: 10px Verdana;
+}
+
+.axis .grid-line {
+   stroke: #000;
+   stroke-opacity: 0.2;
+}
