@@ -6,16 +6,17 @@ import "./styles/Nav.css"
 const HeaderComponent = () => {
 
    const links = [
-      { url: "/search/byThePatient", text: "pelo paciente e o dia" },
-      { url: "/search/byRangeOfValues", text: "por intervalo de valores" },
-      { url: "/byPartOfName", text: "por parte do nome" },
-      { url: "/byDay", text: "por dia" },
+      { url: "/search/byThePatient", text: "paciente e dia" },
+      { url: "/search/byRangeOfValues", text: "intervalo de valores" },
+      { url: "/byPartOfName", text: "parte do nome" },
+      { url: "/byDay", text: "dia" },
+      { url: "/handbook", text: "|manual|" },
    ];
 
    return (
-      <Navbar bg="light" expand="sm" className="navbar">
+      <Navbar bg="light" expand="sm" className="navbar navbarHeader">
          <Container fluid>
-            <Navbar.Brand href="/">Escolhe sua busca:</Navbar.Brand>
+            <Navbar.Brand href="/">Escolha sua busca por:</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                <Nav

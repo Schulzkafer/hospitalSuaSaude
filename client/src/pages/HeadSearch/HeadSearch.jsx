@@ -50,7 +50,7 @@ const HeadSearch = () => {
             <Col xl={6}>
                <Form>
                   <Form.Group className="mb-3 formGroup">
-                     <Form.Label>Nome de paciente</Form.Label>
+                     <Form.Label>Nome do paciente</Form.Label>
                      <Form.Control
                         type="text"
                         placeholder="Nome"
@@ -59,7 +59,7 @@ const HeadSearch = () => {
                         onChange={(e) => setName(e.target.value)}
                      />
                      <Form.Text className="text-muted">
-                        Nao pode ser vazio
+                        O preenchimento do campo é obrigatório
                      </Form.Text>
                   </Form.Group>
 
@@ -73,7 +73,7 @@ const HeadSearch = () => {
                   <Button
                      variant="secondary"
                      disabled={patientIndiceCardiaco.length === 0 && patientIndicePulmonar.length === 0 ? true : false}
-                     onClick={() => setGraphShowed(!graphShowed)}>Mostrar o grafico</Button>
+                     onClick={() => setGraphShowed(!graphShowed)}>Mostrar gráfico</Button>
 
                   <Message>{message}</Message>
                </Form>
@@ -91,15 +91,14 @@ const HeadSearch = () => {
 
          <div className="text-center">
             {
-               (graphShowed && patientIndiceCardiaco.length) ?
-                  <Graph indices={patientIndiceCardiaco} /> :
-                  null
-
-            }
-            {
-               (graphShowed && patientIndicePulmonar.length) ?
-                  <Graph indices={patientIndicePulmonar} /> :
-                  null
+               [patientIndiceCardiaco, patientIndicePulmonar].map(g => {
+                  return (graphShowed && g.length) > 0 ?
+                     <Graph
+                        key={Math.random()}
+                        indices={g}
+                     /> :
+                     null
+               })
             }
          </div>
       </Container >

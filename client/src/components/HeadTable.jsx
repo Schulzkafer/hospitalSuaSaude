@@ -10,8 +10,8 @@ const TableComponent = ({ ind, arr }) => {
          <Table responsive bordered >
             <thead>
                <tr>
-                  <th>data</th>
-                  <th>tempo</th>
+                  <th>Data</th>
+                  <th>Hora</th>
                   <th>{ind}</th>
                </tr>
             </thead>

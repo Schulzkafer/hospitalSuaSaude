@@ -7,7 +7,7 @@ import useHttp from "../hooks/http.hook";
 import createCSV from "../functions/createCSV";
 import getTime from "../functions/getTime";
 
-import { Button, Container, Form, FormControl, Table } from "react-bootstrap";
+import { Button, Container, Form, FormControl, OverlayTrigger, Table, Tooltip } from "react-bootstrap";
 import HospitalEmblem from "../images/HospitalEmblem.jpg";
 
 const ByDay = () => {
@@ -16,7 +16,6 @@ const ByDay = () => {
    const [indiceCardiaco, setIndiceCardiaco] = useState([]);
    const [indicePulmonar, setIndicePulmonar] = useState([]);
    const [displayedTable, setDisplayedTable] = useState("Indice Cardiaco");
-   const [displayHint, setDisplayHint] = useState(true);
 
    const { request, isLoading } = useHttp();
 
@@ -34,7 +33,6 @@ const ByDay = () => {
 
    const changeDisplayedTable = () => {
       setDisplayedTable(displayedTable === "Indice Cardiaco" ? "Indice Pulmonar" : "Indice Cardiaco")
-      setDisplayHint(false)
    }
 
    return (
@@ -55,7 +53,7 @@ const ByDay = () => {
                      onClick={searchByDay}>Buscar</Button>
                   <ButtonComponent
                      func={createCSV}
-                     arr={displayedTable === "indiceCardiaco" ? indiceCardiaco : indicePulmonar}
+                     arr={displayedTable === "IndiceCardiaco" ? indiceCardiaco : indicePulmonar}
                   />
                </div>
             </Form.Group>
@@ -68,21 +66,25 @@ const ByDay = () => {
                   <div className="text-center"><img src={HospitalEmblem} alt="Logo" style={{ maxWidth: "50vh" }} /></div> :
                   (
                      <>
-                        <h3
-                           className="my-3 text-center"
+                        <div
+                           className="mt-3 mb-1 text-center"
                         >
-                           <div
-                              onClick={changeDisplayedTable}
-                              className="d-inline-block"
+                           <OverlayTrigger
+                              placement="top"
+                              overlay={
+                                 <Tooltip id={`tooltip-top`}>
+                                    Clique aqui para mudar o tipo de índice na tabela
+                                 </Tooltip>
+                              }
                            >
-                              <span>{displayedTable}</span>
-
-                              <span className="text-warning">&#8680;</span>
-                              <span
-                                 className={displayHint ? "d-inline" : "d-none"}
-                                 style={{ fontSize: "0.6rem" }}>Clique aqui para mudar a tabela</span>
-                           </div>
-                        </h3>
+                              <h3
+                                 onClick={changeDisplayedTable}
+                                 className="d-inline-block showHovered"
+                              >{displayedTable === "Indice Cardiaco" ? "Índice Cardíaco" : "Índice Pulmonar"}
+                                 <span className="text-warning">&#8680;</span>
+                              </h3>
+                           </OverlayTrigger>
+                        </div>
 
                         <div className="tableContainer">
                            <Table responsive bordered className="table" >
@@ -92,9 +94,9 @@ const ByDay = () => {
                                     <th>Nome</th>
                                     <th>Idade</th>
                                     <th>CPF</th>
-                                    <th>data</th>
-                                    <th>tempo</th>
-                                    <th>indice</th>
+                                    <th>Data</th>
+                                    <th>Hora</th>
+                                    <th>Índice</th>
                                  </tr>
                               </thead>
                               <tbody>

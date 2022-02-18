@@ -5,6 +5,14 @@
 
 .navbar a {
    padding: 0 0.5em;
-   text-decoration: none;
    color: #01304E;
+}
+
+.navbarHeader a {
+   text-decoration: none;
+}
+
+.navbarFooter {
+   height: 50px;
+   margin-top: -50px;
 }

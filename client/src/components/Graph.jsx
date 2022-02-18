@@ -24,6 +24,7 @@ const Graph = ({ indices }) => {
          }).sort((a, b) => a.time - b.time);
 
          let values = data.map(obj => obj.value)
+         let isIntervalOfDates = data[0].time.getMonth() !== data[data.length - 1].time.getMonth();
 
          let axisXLength = width - 2 * margin;
          let axisYLength = height - 2 * margin;
@@ -51,12 +52,12 @@ const Graph = ({ indices }) => {
 
          let axisX = d3.axisBottom()
             .scale(scaleX)
-            .ticks(data.length)
-            .tickFormat(d3.timeFormat('%H'));
+            .ticks(Math.min(10, data.length))
+            .tickFormat(d3.timeFormat(isIntervalOfDates ? '%b' : '%H'));
 
          let axisY = d3.axisLeft()
             .scale(scaleY)
-            .ticks(data.length)
+            .ticks(Math.min(10, data.length));
 
          svg.append("g")
             .attr("class", "x-axis")
@@ -97,10 +98,10 @@ const Graph = ({ indices }) => {
             .attr("text-anchor", "middle")
             .style("font-size", "0.9em")
             .text(indices.length < 2 ?
-               "Nao ha pontos para criar linha" :
+               "Não há dados para criar gráfico" :
                "ind_card_EPOC" in indices[0] ?
-                  "Indice cardiaco" :
-                  "Indice pulmonar"
+                  "Índice cardíaco" :
+                  "Índice pulmonar"
             );
 
          svg.append("g").append("text")
@@ -108,14 +109,14 @@ const Graph = ({ indices }) => {
             .attr("y", margin - 11)
             .attr("text-anchor", "end")
             .style("font-size", "11px")
-            .text("Indice");
+            .text("Índice");
 
          svg.append("g").append("text")
-            .attr("x", width - margin + 11)
+            .attr("x", width - margin + 23)
             .attr("y", height - margin - 5)
             .attr("text-anchor", "end")
             .style("font-size", "11px")
-            .text("Horas");
+            .text(isIntervalOfDates ? "Mês" : "Hora");
 
          svg.append("g").append("path")
             .attr("d", line(points))

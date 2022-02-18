@@ -14,18 +14,18 @@ const ByRangeOfValues = () => {
       <>
          <Form.Group className="mb-3 formGroup">
             <div>
-               <Form.Label>O que esta procurando</Form.Label>
+               <Form.Label>Busca de índice</Form.Label>
             </div>
             <Form.Check
                inline
-               label="Indice Cardiaco Valor"
+               label="Valor do índice cardíaco"
                type="radio"
                checked={intervalObject === "Indice Cardiaco Valor"}
                onChange={() => setIntervalObject("Indice Cardiaco Valor")}
             />
             <Form.Check
                inline
-               label="Indice Pulmonar Valor"
+               label="Valor do índice pulmonar"
                type="radio"
                checked={intervalObject === "Indice Pulmonar Valor"}
                onChange={() => setIntervalObject("Indice Pulmonar Valor")}
@@ -33,23 +33,23 @@ const ByRangeOfValues = () => {
          </Form.Group>
 
          <Form.Group className="mb-3 formGroup" controlId="formCaracteristicaDePaciente">
-            <Form.Label>Intervalo inicial do indice</Form.Label>
+            <Form.Label>Intervalo inicial do índice</Form.Label>
             <Form.Control
                type="number"
-               placeholder="Intervalo inicio"
+               placeholder="De 0 até 1"
                value={intervalStart}
                onChange={(e) => setIntervalStart(e.target.value)}
             />
 
-            <Form.Label>Intervalo final do indice</Form.Label>
+            <Form.Label>Intervalo final do índice</Form.Label>
             <Form.Control
                type="number"
-               placeholder="Intervalo final"
+               placeholder="De 0 até 1"
                value={intervalFinal}
                onChange={(e) => setIntervalFinal(e.target.value)}
             />
             <Form.Text className="text-muted">
-               *Serao mostrados os valores mais recentes
+               *Serão mostrados os valores mais recentes
             </Form.Text>
          </Form.Group>
 
@@ -63,7 +63,7 @@ const ByRangeOfValues = () => {
                   intervalFinal,
                }
             )}>
-            Submit
+            Enviar
          </Button>
       </>
    )

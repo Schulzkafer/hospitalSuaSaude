@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const config = require("config");
 const path = require("path");
-// const fs = require("fs").promises;
 const mysql = require("mysql2");
 const PORT = process.env.PORT || config.get("port")
 const bodyParser = require("body-parser");
@@ -34,7 +33,6 @@ async function start() {
             res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
          })
       }
-
 
    } catch (e) {
       ('server error', e.message);

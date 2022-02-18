@@ -1,14 +1,12 @@
 import { React } from "react"
-import { Container, Navbar, } from "react-bootstrap";
-
+import { Container, Nav, Navbar, } from "react-bootstrap";
 import "./styles/Nav.css";
-import "./styles/Footer.css"
 
 const FooterComponent = () => {
    return (
-      <Navbar bg="light" expand="lg" className="navbar" id="footer">
+      <Navbar bg="light" expand="lg" className="navbar navbarFooter">
          <Container fluid>
-            <Navbar.Brand href="https://curriculoschulzkafer.herokuapp.com/">Developer: Aleksandr K.</Navbar.Brand>
+            <Nav.Link href="https://curriculoschulzkafer.herokuapp.com/">Desenvolvedor: Aleksandr K.</Nav.Link>
          </Container>
       </Navbar>
    )

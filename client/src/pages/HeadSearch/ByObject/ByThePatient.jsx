@@ -17,12 +17,12 @@ const ByThePatient = () => {
 
          <Form.Group className="mb-3 formGroup">
             <div>
-               <Form.Label>O que esta procurando</Form.Label>
+               <Form.Label>Busca de índice</Form.Label>
             </div>
             <div>
                <Form.Check
                   inline
-                  label="indice cardiaco"
+                  label="índice cardíaco"
                   type="checkbox"
                   checked={searchForIndiceCardiaco}
                   onChange={() => setSearchForIndiceCardiaco(!searchForIndiceCardiaco)}
@@ -30,7 +30,7 @@ const ByThePatient = () => {
 
                <Form.Check
                   inline
-                  label="indice pulmonar"
+                  label="índice pulmonar"
                   type="checkbox"
                   checked={searchForIndicePulmonar}
                   onChange={() => setSearchForIndicePulmonar(!searchForIndicePulmonar)}
@@ -39,7 +39,7 @@ const ByThePatient = () => {
          </Form.Group>
 
          <Form.Group className="mb-3 formGroup" controlId="formDataStart">
-            <Form.Label>{searchPeriod ? "O inicio do intervalo" : "O dia"}</Form.Label>
+            <Form.Label>{searchPeriod ? "Início do intervalo" : "Data"}</Form.Label>
             <Form.Control
                type="date"
                placeholder="Data Start"
@@ -48,13 +48,13 @@ const ByThePatient = () => {
             />
 
             <Form.Text className="text-muted">
-               *Se a data nao for escolhida, busca-se os ultimos  dados do paciente
+               *Se a data não for escolhida, buscam-se os últimos dados do paciente
             </Form.Text>
 
             <Form.Check
                className="my-2"
                type="switch"
-               label="Procurar por um periodo"
+               label="Procurar por intervalo de data"
                checked={searchPeriod}
                onChange={() => setSearchPeriod(!searchPeriod)}
             />
@@ -62,7 +62,7 @@ const ByThePatient = () => {
             {
                searchPeriod ?
                   <>
-                     <Form.Label>O fim do intervalo</Form.Label>
+                     <Form.Label>Fim do intervalo</Form.Label>
                      <Form.Control
                         type="date"
                         placeholder="Data End"
@@ -85,7 +85,7 @@ const ByThePatient = () => {
                   searchForIndiceCardiaco,
                   searchForIndicePulmonar
                })}>
-            Submit
+            Enviar
          </Button>
 
       </>

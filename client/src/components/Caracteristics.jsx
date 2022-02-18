@@ -12,7 +12,7 @@ const Caracteristics = ({ patientIndiceCardiaco, patientIndicePulmonar }) => {
                {
                   !patientIndiceCardiaco.length ? null :
                      <>
-                        <h4>Indice cardiaco</h4>
+                        <h4>Índice cardíaco</h4>
                         <TableComponent ind="ind_card" arr={patientIndiceCardiaco} />
                      </>
                }
@@ -21,7 +21,7 @@ const Caracteristics = ({ patientIndiceCardiaco, patientIndicePulmonar }) => {
                {
                   !patientIndicePulmonar.length ? null :
                      <>
-                        <h4>Indice pulmonar</h4>
+                        <h4>Índice pulmonar</h4>
                         <TableComponent ind="ind_pulm" arr={patientIndicePulmonar} />
                      </>
                }
