@@ -1,8 +1,0 @@
-{
-   "port": 5000,
-   "connectionLimit": 5,
-   "host": "us-cdbr-east-05.cleardb.net",
-   "user": "bb8387f4f4a878",
-   "database": "heroku_c44465c9cc5cd87",
-   "password": "31335482"
-}
