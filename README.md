@@ -1,5 +1,20 @@
 ## Hospital Sua Saúde
 
+### Instalação
+
+O projeto usa React.js, Node.js e MySQL.
+
+1. `cd hospitalSuaSaude`
+2. `npm install` 
+3. `npm run dev` 
+
+Dessa maneira, inicia-se o projeto no modo "desenvolvedor"
+
+_Para usar o banco de dados, é necessário inserir seus próprios dados (`host`, `user`, `database`, `password`) na pasta`config/default.json`_
+
+
+### Manual
+
 Os arquivos apresentam diversas características sobre pacientes terminais internados em um hospital.
 As seções oferecem as seguintes informações:
 
