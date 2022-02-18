@@ -1,0 +1,8 @@
+{
+   "port": 5000,
+   "connectionLimit": 5,
+   "host": "",
+   "user": "",
+   "database": "",
+   "password": ""
+}
