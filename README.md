@@ -4,9 +4,11 @@
 
 O projeto usa React.js, Node.js e MySQL.
 
-1. `cd hospitalSuaSaude`
-2. `npm install` 
-3. `npm run dev` 
+ ```
+ cd hospitalSuaSaude
+ npm install  
+ npm run dev
+ ``` 
 
 Dessa maneira, inicia-se o projeto no modo "desenvolvedor"
 
