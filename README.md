@@ -10,9 +10,14 @@ O projeto usa React.js, Node.js e MySQL.
 
 Dessa maneira, inicia-se o projeto no modo "desenvolvedor"
 
-_Para usar o banco de dados, é necessário inserir seus próprios dados (`host`, `user`, `database`, `password`) na pasta`config/default.json`_
+_Para usar o banco de dados, é necessário inserir seus próprios dados (`host`, `user`, `database`, `password`) no arquivo _`config/default.json`_
 
 
+### Adição de dados ao DB
+
+Para adicionar novos pacientes e seus índices ao banco de dados, pode ser integrado o projeto desse repositório https://github.com/Schulzkafer/DemoInsertDataIntoDB.
+Nele se pode inserir o arquivo de pacientes.json ou de índices ao formulário correspondente (no projeto atual teria um formulário só para os dois tipos de arquivos). No arquivo de pacientes verifica-se que todos os pacientes têm todos os campos obrigatórios (`nome`, `idade` e `cpf`) e adicionam-se os dados ao DB. O arquivo de índices é convertido ao list e adicionado à sua tabela correspondente (o que contém `ind_card` vai para a tabela `indice_cardiaco`, o que contém `ind_pulm` vai para `indice_pulmonar`)
+ 
 ### Manual
 
 Os arquivos apresentam diversas características sobre pacientes terminais internados em um hospital.
